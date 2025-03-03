@@ -49,7 +49,7 @@ df['Load'] = pd.to_numeric(df['Load'], errors='coerce')
 df = df.dropna(subset=['Load'])  # Drop rows where 'load' conversion failed
 
 # (Optional) Pivot the data if you want a wide format per date:
-# df_pivot = df.pivot(index='date', columns='province', values='load')
+df_pivot = df.pivot(index='date', columns='province', values='load')
 
 # Save the cleaned data for further analysis
 df.to_csv(processed_data_path, index=False)
