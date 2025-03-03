@@ -1,12 +1,5 @@
 import os
-<<<<<<< HEAD
 import pandas as pd
-=======
-os.getcwd()
-print("Current working directory:", os.getcwd())
-# Using relative paths from the project root
-data_file = os.path.join("data", "raw", "teleco_time_series.csv")
->>>>>>> e2645ed4b77c08d555bc38fd7af5fe70cbc8f030
 
 # Build a robust relative path from this script's location
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -49,7 +42,7 @@ df['Load'] = pd.to_numeric(df['Load'], errors='coerce')
 df = df.dropna(subset=['Load'])  # Drop rows where 'load' conversion failed
 
 # (Optional) Pivot the data if you want a wide format per date:
-df_pivot = df.pivot(index='date', columns='province', values='load')
+#df_pivot = df.pivot(index='PERIOD_START_TIME', columns='province', values='load')
 
 # Save the cleaned data for further analysis
 df.to_csv(processed_data_path, index=False)
